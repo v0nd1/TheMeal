@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class Meal(
     @SerializedName("idMeal") var idMeal: String? = null,
-    @SerializedName("strMeal") var strMeal: String? = null,
+    @SerializedName("strMeal") var strMeal: String = "",
     @SerializedName("strDrinkAlternate") var strDrinkAlternate: String? = null,
     @SerializedName("strCategory") var strCategory: String? = null,
     @SerializedName("strArea") var strArea: String? = null,
@@ -21,7 +21,7 @@ data class Meal(
     @SerializedName("strIngredient7") var strIngredient7: String? = null,
     @SerializedName("strIngredient8") var strIngredient8: String? = null,
     @SerializedName("strIngredient9") var strIngredient9: String? = null,
-    @SerializedName("strIngredient10") var strIngredient10: String? = null,
+    @SerializedName("strIngredient10") var strIngredient10: String = "",
     @SerializedName("strIngredient11") var strIngredient11: String? = null,
     @SerializedName("strIngredient12") var strIngredient12: String? = null,
     @SerializedName("strIngredient13") var strIngredient13: String? = null,

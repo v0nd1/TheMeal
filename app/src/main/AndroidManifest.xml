@@ -15,9 +15,10 @@
         android:theme="@style/Theme.TheMeal"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.presentation.mainActivity.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.TheMeal">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

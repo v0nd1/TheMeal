@@ -1,4 +1,4 @@
-package com.huggydugy.themeal
+package com.huggydugy.themeal.ui.presentation.mainActivity
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

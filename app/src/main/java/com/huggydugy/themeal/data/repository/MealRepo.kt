@@ -7,8 +7,8 @@ import javax.inject.Inject
 class MealRepo @Inject constructor(
     private val foodApi: FoodApi
 ) {
-    suspend fun getMeal(): List<Meal> {
-        val mealResponse = foodApi.getMeal()
+    suspend fun getMealById(id: String): List<Meal> {
+        val mealResponse = foodApi.getMealById(id)
         return mealResponse.meals
     }
 
