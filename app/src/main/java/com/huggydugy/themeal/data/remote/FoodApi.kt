@@ -1,5 +1,6 @@
 package com.huggydugy.themeal.data.remote
 
+import com.huggydugy.themeal.data.model.Meal
 import com.huggydugy.themeal.data.model.responses.CategoryResponse
 import com.huggydugy.themeal.data.model.responses.MealResponse
 import retrofit2.http.GET

@@ -24,13 +24,14 @@ class HomeViewModel @Inject constructor(
     private val _selectedCategory = MutableStateFlow<Category?>(null)
     private val _selectedMeals = MutableStateFlow<List<Meal>>(emptyList())
     private val _isBottomSheetVisible = MutableStateFlow(false)
-    private val _stateMeal = MutableStateFlow<List<Meal>>(emptyList())
+    private val _selectedMeal = MutableStateFlow<Meal?>(null)
+
 
     val stateCategory: StateFlow<List<Category>> get() = _stateCategory
     val selectedCategory: StateFlow<Category?> get() = _selectedCategory
     val selectedMeals: StateFlow<List<Meal>> get() = _selectedMeals
     val isBottomSheetVisible: StateFlow<Boolean> get() = _isBottomSheetVisible
-    val stateMeals: StateFlow<List<Meal>> get() = _stateMeal
+    val selectedMeal: StateFlow<Meal?> get() = _selectedMeal
 
     init {
         viewModelScope.launch {
@@ -39,6 +40,15 @@ class HomeViewModel @Inject constructor(
             _selectedCategory.value = categories.first()
             _selectedMeals.value = mealRepo.getMealsByCategory("Beef")
         }
+    }
+
+    fun onMealCardClicked(mealId: String) {
+        viewModelScope.launch {
+            val meal =  mealRepo.getMealById(mealId)
+            _selectedMeal.value = meal
+            onEvent(MealEvent.ShowDialog)
+        }
+
     }
 
     fun onEvent(event: MealEvent){
